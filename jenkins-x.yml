@@ -193,15 +193,6 @@ pipelineConfig:
             name: install-acme-issuer-and-certificate
           - args:
             - step
-            - boot
-            - vault
-            - --provider-values-dir
-            - ../../kubeProviders
-            command: jx
-            dir: /workspace/source/systems/vault
-            name: install-vault
-          - args:
-            - step
             - create
             - values
             - --name
