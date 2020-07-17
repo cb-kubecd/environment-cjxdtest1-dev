@@ -1,7 +1,7 @@
 autoUpdate:
   enabled: false
   schedule: ""
-bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config.git
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
   azure: {}
   clusterName: cjxdtest1
@@ -78,6 +78,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v0.0.36
-  url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
+  ref: v1.0.535
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
