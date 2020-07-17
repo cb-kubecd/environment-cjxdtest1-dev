@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:cjxdtest1/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jenkins-x-bot-test@googlegroups.com
+  token: vault:cjxdtest1/pipelineUser:token
+  username: jenkins-x-bot-test
+prow:
+  hmacToken: vault:cjxdtest1/prow:hmacToken

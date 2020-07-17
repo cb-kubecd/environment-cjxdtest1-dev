@@ -1,39 +1,83 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: true
-  project: ""
   azure: {}
+  clusterName: cjxdtest1
+  devEnvApprovers:
+  - rawlingsj
+  environmentGitOwner: cb-kubecd
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jx-development
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: europe-west1-b
 environments:
-  - key: dev
-  - key: staging
-  - key: production
+- ingress:
+    domain: 35.195.146.62.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-cjxdtest1-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-cjxdtest1-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-cjxdtest1-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 35.195.146.62.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: gs://cjxdtest1-logs-89dcde4a-044b-47e2-9e00-019c6dd0d4b1
   reports:
     enabled: true
-    url: ""
+    url: gs://cjxdtest1-reports-6933ee65-72f9-4391-b387-eee9bc666932
   repository:
     enabled: true
-    url: ""
+    url: gs://cjxdtest1-repository-f1eefe40-54a4-4d9e-be8d-1b7aa5007f
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: 2.1.78+cjxd.11
+  ref: v0.0.36
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: lighthouse
