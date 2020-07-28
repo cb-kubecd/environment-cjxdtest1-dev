@@ -78,6 +78,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v1.0.535
+  ref: f00bad693ff99680cff9b27ba467c8a19500a9db
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
